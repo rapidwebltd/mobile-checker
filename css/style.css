@@ -3,8 +3,10 @@ html {font-size: 62.5%}
 p, li, label {
 	font-size: 16px; font-size: 1.6rem;
 }
-
-.btn-yes, .btn-no, .jumbotron {
+.btn-yes, .btn-no {
+  margin-bottom: 64px;
+}
+.jumbotron {
   margin-bottom: 32px;
 }
 .step-2, .step-3 {
