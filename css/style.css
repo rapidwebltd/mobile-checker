@@ -5,6 +5,7 @@ p, li, label {
 }
 .btn-yes, .btn-no {
   margin-bottom: 64px;
+  width: 100%;
 }
 .jumbotron {
   margin-bottom: 32px;
