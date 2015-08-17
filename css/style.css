@@ -7,6 +7,9 @@ p, li, label {
   margin-bottom: 64px;
   width: 100%;
 }
+.fact-body {
+  min-height: 250px;
+}
 .jumbotron {
   margin-bottom: 32px;
 }
