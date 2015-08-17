@@ -1,0 +1,67 @@
+html {font-size: 62.5%}
+
+p, li, label {
+	font-size: 16px; font-size: 1.6rem;
+}
+
+.btn-yes, .btn-no, .jumbotron {
+  margin-bottom: 32px;
+}
+.step-2, .step-3 {
+  display: none;
+}
+
+.text-lg {
+	font-size: 500%;
+	font-weight: bold;
+}
+
+#check-website {
+  margin-bottom: 16px;
+}
+
+/*Smartphone*/
+.smartphone {
+  margin: 0 auto;
+  text-align: center;
+}
+.smartphone > .body {
+  background: #555;
+  border: 2px solid #333;
+  box-shadow: inset 0 0 2px #333;
+  padding: 8px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 16px;
+  display:inline-block;
+
+}
+.smartphone > .body {
+    padding:16px;
+}
+.smartphone > .body > .screen {
+  border: 1px solid #333;
+  border-radius: 4px; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.smartphone > .body > .screen-button {
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #111;
+  margin: 0 auto;
+  text-align: center;
+  min-width: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  margin: 16px auto;
+}
+
+.loading {
+  padding-top: 251px;
+  padding-bottom: 251px;
+  padding-left: 114px;
+  padding-right: 114px;
+  background: #FEFEFE;
+}

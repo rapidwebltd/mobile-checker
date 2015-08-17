@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Is your website ready for the mobile web?</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Step 1. Check your website for FREE!</h2>
+          <form id="check-website">
+            <label for="url" class="sr-only">Website URL: </label>
+              <input type="url" name="url" id="url" class="form-control" placeholder="Please enter your website... (E.g: http://www.google.com)">
+              <br>
+              <button type="submit" class="btn btn-primary btn-lg">Check Website</button>
+        
+          </form>
+        </div>
+        <div class="col-sm-4">
+          <div class="smartphone">
+            <div class="body">
+              <img class="img-responsive screenshot" src="img/default.jpg" alt="Default Image" />
+              <div class="screen"></div>
+              <div class="screen-button"></div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container step-2">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Step 2. Is your website mobile-friendly?</h2>
+      </div>
+      <div class="col-sm-6">
+        <div class="btn btn-block btn-default btn-lg btn-success btn-yes">Yes</div>
+
+      </div>
+      <div class="col-sm-6">
+        <div class="btn btn-block btn-default btn-lg btn-danger btn-no">No</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron step-3 step-3a">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <!--<h2>Step 3. Share your results!</h2>!-->
+          <h2>Congradulations!</h2>
+          <p>Give yourself a pat on the back for allowing your visitors to navigate through your website via their smartphones or tablets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="jumbotron step-3 step-3b">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Step 3. Make your website mobile friendly!</h2>
+          <p>Oh, dear... :(</p> 
+          <p>Not to worry though, you can always get in contact with us at <a href="http://rapidweb.biz">Rapid Web</a> and we'll be able to give your website a shiny new mobile-friendly look.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <h2>Did you know...?</h2>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Mobile Ownership</h3>
+          </div>
+          <div class="panel-body">
+            <p class="text-center text-lg">93%</p>
+            <p>...is the percent of Adults who own a smartphone in 2014. (<a href="http://media.ofcom.org.uk/facts/">Ofcom</a>)</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+          <h3 class="panel-title">Mobile Usage</h3>
+          </div>
+          <div class="panel-body">
+            <p class="text-center text-lg">57%</p>
+            <p>...is the percent of Adults using smartphones to access the internet in 2014. (<a href="http://media.ofcom.org.uk/facts/">Ofcom</a>)</p>
+            <br>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sales Assistant</h3>
+          </div>
+          <div class="panel-body">
+            <p class="text-center text-lg">82%</p>
+            <p>...is the percent of smartphone users who turn to their smartphone to decide on buying a product. (<a href="https://www.thinkwithgoogle.com/articles/i-want-to-buy-moments.html">Think with Google</a>)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Local Searches</h3>
+          </div>
+          <div class="panel-body">
+            <p class="text-center text-lg">88%</p>
+            <p>...is the percent of smartphone consumers who conduct local searches on search engines. (<a href="https://think.storage.googleapis.com/docs/how-advertisers-can-extend-their-relevance-with-search_research-studies.pdf">Think with Google</a>)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <hr>
+      <p class="text-center">Created by <a href="http://rapidweb.biz">Rapid Web Ltd</a></p>
+    </footer>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+  String.prototype.replaceAll = function(str1, str2, ignore) 
+  {
+      return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+  } 
+    function getMobileSite(url) {
+      $.getJSON( "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url="+url+"&strategy=mobile&screenshot=true", function( data ) {
+      data:
+        var imgSrc, screenshotData;
+        screenshotData = data.screenshot.data;
+        screenshotData = screenshotData.replaceAll('_','/');
+        screenshotData = screenshotData.replaceAll('-','+');
+        imgSrc = 'data:'+data.screenshot.mime_type+';base64,'+screenshotData;
+        $(".loading").remove();
+        $( ".screen" ).append("<img src='"+imgSrc+"' class='img-responsive screenshot' alt='"+data.title+"' title='"+data.title+"'/>");
+      });
+    }
+
+    
+    
+    $( "#check-website" ).submit(function( event ) {
+      event.preventDefault();
+      $(".screenshot").remove();
+      $( ".screen" ).append("<p class='loading'>Loading...</p>");
+      getMobileSite($("#url").val());
+      $('.step-2').fadeIn('slow');
+    });
+
+    $('.btn-yes').on('click', function(){
+      $('.step-3b').hide();
+      $('.step-3a').fadeIn('slow');
+    });
+
+     $('.btn-no').on('click', function(){
+      $('.step-3a').hide();
+      $('.step-3b').fadeIn('slow');
+    });
+   
+  </script>
+</body>
+</html>
