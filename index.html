@@ -162,12 +162,10 @@
       });
     }
 
-    
-    
     $( "#check-website" ).submit(function( event ) {
       event.preventDefault();
       $(".screenshot").remove();
-      $( ".screen" ).append("<p class='loading'>Loading...</p>");
+      $( ".screen" ).append("<div class='loading'><div class='loader'>Loading...</div></div>");
       getMobileSite($("#url").val());
       $('.step-2').fadeIn('slow');
     });
