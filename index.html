@@ -26,7 +26,7 @@
             <label for="url" class="sr-only">Website URL: </label>
               <input type="url" name="url" id="url" class="form-control" onclick="this.value='http://'" placeholder="Please enter your website... (E.g: http://www.google.com)">
               <br>
-              <button type="button" class="btn btn-primary btn-lg">Check Website</button>
+              <button type="submit" class="btn btn-primary btn-lg">Check Website</button>
         
           </form>
         </div>
@@ -162,7 +162,7 @@
       });
     }
 
-    $( "#check-website" ).on("click", function( event ) {
+    $( "#check-website" ).submit(function( event ) {
       event.preventDefault();
       $(".screenshot").remove();
       $( ".screen" ).append("<div class='loading'><div class='loader'>Loading...</div></div>");
