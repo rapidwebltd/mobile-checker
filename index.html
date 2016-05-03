@@ -33,8 +33,8 @@
         <div class="col-sm-4">
           <div class="smartphone">
             <div class="body">
-              <img class="img-responsive screenshot" src="img/default.jpg" alt="Default Image" />
-              <div class="screen"></div>
+              <img id="screenshot" class="img-responsive screenshot" src="img/default.jpg" alt="Default Image" />
+              <div id="screen" class="screen"></div>
               <div class="screen-button"></div>
             </div>
           </div>
@@ -145,30 +145,52 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
-  String.prototype.replaceAll = function(str1, str2, ignore) 
-  {
-      return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
-  } 
-    function getMobileSite(url) {
-      $.getJSON( "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url="+url+"&strategy=mobile&screenshot=true", function( data ) {
-      data:
-        var imgSrc, screenshotData;
-        screenshotData = data.screenshot.data;
-        screenshotData = screenshotData.replaceAll('_','/');
-        screenshotData = screenshotData.replaceAll('-','+');
-        imgSrc = 'data:'+data.screenshot.mime_type+';base64,'+screenshotData;
-        $(".loading").remove();
-        $( ".screen" ).append("<img src='"+imgSrc+"' class='img-responsive screenshot' alt='"+data.title+"' title='"+data.title+"'/>");
-      });
-    }
+    var screenshot = document.getElementById('screenshot'), 
+    screen = document.getElementById('screen'),
+    siteUrl = document.getElementById('url');
 
-    $( "#check-website" ).submit(function( event ) {
-      event.preventDefault();
-      $(".screenshot").remove();
-      $( ".screen" ).append("<div class='loading'><div class='loader'>Loading...</div></div>");
-      getMobileSite($("#url").val());
-      $('.step-2').fadeIn('slow');
-    });
+    String.prototype.replaceAll = function(str1, str2, ignore) 
+    {
+        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+    }
+    function getMobileSite(siteUrl) {
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url='+encodeURIComponent(siteUrl)+'&strategy=mobile&screenshot=true', true);
+
+      request.onload = function() {
+          if (request.status >= 200 && request.status < 400) {
+                // Success!
+                var data = JSON.parse(request.responseText);
+                loading = document.getElementById('loading');
+                data:
+                var imgSrc, screenshotData;
+                screenshotData = data.screenshot.data;
+                screenshotData = screenshotData.replaceAll('_','/');
+                screenshotData = screenshotData.replaceAll('-','+');
+                imgSrc = 'data:'+data.screenshot.mime_type+';base64,'+screenshotData;
+
+                loading.remove();
+                screen.innerHTML = "<img src='"+imgSrc+"' class='img-responsive screenshot' alt='"+data.title+"' title='"+data.title+"'/>";
+            } else {
+                // We reached our target server, but it returned an error
+
+            }
+        };
+
+        request.onerror = function() {
+              // There was a connection error of some sort
+          };
+
+          request.send();
+      }
+
+      document.getElementById('check-website').addEventListener('submit', function(event){
+        event.preventDefault();
+        screenshot.remove();
+        screen.innerHTML = "<p id='loading' class='loading'>Loading...</p>";
+        getMobileSite(siteUrl.value);
+        $('.step-2').fadeIn('slow');
+    })
 
     $('.btn-yes').on('click', function(){
       $('.step-3b').hide();
